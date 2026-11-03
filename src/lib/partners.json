@@ -1,0 +1,86 @@
+[
+  {
+    "name": "شعار الطاهي والسنابل",
+    "logo": "/images/partners/partner-1.png",
+    "width": 1200,
+    "height": 1000,
+    "bounds": [
+      380,
+      271,
+      887,
+      767
+    ]
+  },
+  {
+    "name": "Subway",
+    "logo": "/images/partners/partner-2.png",
+    "width": 740,
+    "height": 525,
+    "bounds": [
+      13,
+      156,
+      727,
+      369
+    ]
+  },
+  {
+    "name": "Domino’s",
+    "logo": "/images/partners/partner-3.png",
+    "width": 2000,
+    "height": 1125,
+    "bounds": [
+      7,
+      346,
+      1992,
+      779
+    ]
+  },
+  {
+    "name": "Papa John’s",
+    "logo": "/images/partners/partner-4.png",
+    "width": 1160,
+    "height": 600,
+    "bounds": [
+      107,
+      100,
+      1041,
+      501
+    ]
+  },
+  {
+    "name": "Burger King",
+    "logo": "/images/partners/partner-5.png",
+    "width": 1000,
+    "height": 1000,
+    "bounds": [
+      9,
+      5,
+      987,
+      994
+    ]
+  },
+  {
+    "name": "GO FOOD",
+    "logo": "/images/partners/partner-6.png",
+    "width": 1024,
+    "height": 1024,
+    "bounds": [
+      50,
+      371,
+      973,
+      653
+    ]
+  },
+  {
+    "name": "KFC",
+    "logo": "/images/partners/partner-7.png",
+    "width": 902,
+    "height": 902,
+    "bounds": [
+      46,
+      286,
+      869,
+      599
+    ]
+  }
+]
