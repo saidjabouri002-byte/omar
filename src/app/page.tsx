@@ -3,20 +3,19 @@ import { ContactButton } from "@/components/contact-button";
 import { BrandLogo } from "@/components/brand-logo";
 import {
   ArrowUpLeft,
+  Binoculars,
   BookOpen,
+  BookOpenCheck,
   ChartNoAxesCombined,
   Check,
   ClipboardCheck,
   Compass,
   GraduationCap,
   HeartHandshake,
+  Lightbulb,
   Megaphone,
-  MessageCircle,
-  Repeat2,
-  Search,
   ShieldCheck,
   ShoppingBag,
-  Sparkles,
   X,
 } from "lucide-react";
 import Image from "next/image";
@@ -77,7 +76,7 @@ export default function Page() {
     "للعملاء غير النشطين",
     "أشهر تالية",
   ];
-  const bonusIcons = [Search, Sparkles, MessageCircle, Repeat2, Compass];
+  const bonusIcons = [Binoculars, Lightbulb, BookOpenCheck];
   const transformation = source[2].split("\n\n");
   return (
     <>
@@ -166,7 +165,7 @@ export default function Page() {
               <h2>
                 من إدارة عشوائية…
                 <br />
-                <span className="muted">إلى بناء غد مشرق لمشروعك.</span>
+                <span className="gold-text">إلى بناء غد مشرق لمشروعك.</span>
               </h2>
             </div>
             <div className="transformation-layout">
@@ -175,9 +174,7 @@ export default function Page() {
                 <Copy text={transformation.slice(0, 2).join("\n\n")} />
               </div>
             </div>
-            <div className="transformation-close">
-              <p><strong>الإعلانات يمكن أن تساعد مشروعك على النمو، لكنها لا يجب أن تكون المصدر الوحيد الذي تعتمد عليه لتحقيق المبيعات. وهنا يأتي دورنا.</strong></p>
-            </div>
+            <div className="section-contact-action"><ContactButton /></div>
           </div>
         </section>
         <Testimonials />
@@ -233,7 +230,7 @@ export default function Page() {
                         </span>
                       </div>
                       <span className="bonus-icon-medallion">
-                        <Icon size={33} strokeWidth={1.2} />
+                        <Icon size={28} strokeWidth={1.6} />
                       </span>
                     </div>
                     <Copy cardTitle text={b} />
@@ -265,15 +262,25 @@ export default function Page() {
                 <blockquote className="consultant-quote">
                   {consultant.quote.split("يعرف الطريق")[0]}<Scribble>يعرف الطريق</Scribble>{consultant.quote.split("يعرف الطريق")[1]}
                 </blockquote>
-                <p className="consultant-experience">{consultant.experience}</p>
+                <div className="consultant-highlight">
+                  <span className="consultant-stat" aria-hidden="true"><strong>+10</strong><span>سنوات خبرة</span></span>
+                  <p className="consultant-experience">{consultant.experience}</p>
+                </div>
                 <div className="consultant-story">
-                  <p>{consultant.vision}</p>
-                  <p>{consultant.commitment}</p>
+                  <div className="consultant-point">
+                    <span className="consultant-point-icon"><Compass size={22} strokeWidth={1.6} /></span>
+                    <div><h4>رؤيتنا</h4><p>{consultant.vision}</p></div>
+                  </div>
+                  <div className="consultant-point">
+                    <span className="consultant-point-icon"><ShieldCheck size={22} strokeWidth={1.6} /></span>
+                    <div><h4>التزامنا</h4><p>{consultant.commitment}</p></div>
+                  </div>
                 </div>
                 <div className="consultant-signoff">
                   <span />
                   <span>رؤية واضحة. وعمل يستحق الأثر.</span>
                 </div>
+                <div className="consultant-action"><ContactButton /></div>
               </div>
             </div>
           </div>
@@ -290,8 +297,6 @@ export default function Page() {
               </h2>
               <p>اكتشف فرص نمو مطعمك أو مقهاك قبل اتخاذ أي قرار</p>
               <p>احصل على تقرير تشخيص أولي مجاني لمشروعك</p>
-              <p>{source[9].split("\n\n")[2]}</p>
-              <p>{source[9].split("\n\n")[3]}</p>
             </div>
             <Assessment />
           </div>
@@ -343,7 +348,7 @@ export default function Page() {
           <div className="container faq-layout">
             <div className="faq-intro">
               <Eyebrow number="09">إجابات قبل أن تبدأ</Eyebrow>
-              <h2><Scribble><span className="faq-gold-title">الأسئلة الشائعة.</span></Scribble></h2>
+              <h2><span className="faq-gold-title">الأسئلة الشائعة.</span></h2>
               <p>وضوح في المنهجية، والتوقعات، والخطوة التالية.</p>
               <a href="#audit" className="text-link">
                 ابدأ بتقييم مشروعك <ArrowUpLeft size={18} />

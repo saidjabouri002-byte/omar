@@ -6515,6 +6515,11 @@ body { background: #fff; }
 .refined-bonuses .bonus-card .bonus-art > div { gap: 12px; }
 .refined-bonuses .bonus-card .bonus-figure { font-size: 45px; }
 .refined-bonuses .bonus-card .bonus-icon-medallion { width: 60px; height: 60px; background: #fff; outline: none; border: 1px solid #e8d9bf; box-shadow: 0 5px 12px rgb(129 89 34 / .06); transform: none; }
+/* Bonus icons share the deliverable cards' burgundy tile and gold ring. */
+.refined-bonuses .bonus-card .bonus-icon-medallion { position: relative; width: 68px; height: 68px; color: var(--gold); background: linear-gradient(145deg, #7a2d60, var(--burgundy) 70%); border: 0; box-shadow: 0 12px 24px rgb(85 28 67 / .22), inset 0 1px 0 rgb(255 255 255 / .14); transition: transform .25s ease, box-shadow .25s ease; }
+.refined-bonuses .bonus-card .bonus-icon-medallion::after { content: ""; position: absolute; inset: -7px; border: 1px solid rgb(207 167 107 / .5); border-radius: 50%; }
+.refined-bonuses .bonus-card:hover .bonus-icon-medallion { transform: translateY(-3px); box-shadow: 0 16px 30px rgb(85 28 67 / .28), inset 0 1px 0 rgb(255 255 255 / .14); }
+@media (prefers-reduced-motion: reduce) { .refined-bonuses .bonus-card .bonus-icon-medallion { transition: none; } .refined-bonuses .bonus-card:hover .bonus-icon-medallion { transform: none; } }
 .refined-bonuses .bonus-card .bonus-card-header { padding-bottom: 2px; }
 .refined-bonuses .bonus-card .copy h3 { font-size: 23px; }
 .refined-bonuses .bonus-card .bonus-card-rule { margin-top: 27px; padding-top: 18px; border-top: 1px solid #eee7eb; }
@@ -6578,3 +6583,76 @@ body { background: #fff; }
 .qualification .qualification-grid > div > .copy > ul { display: grid; grid-template-rows: repeat(5, minmax(0, 1fr)); flex: 1; }
 #faq .faq-intro h2 .faq-gold-title, .commitment .commitment-gold-title { color: #b58a45; }
 @media (min-width: 801px) { .qualification .qualification-grid .copy li { min-height: 80px; } }
+
+/* Contact button after the transformation story and the consultant profile. */
+.section-contact-action { display: flex; justify-content: center; margin-top: 36px; }
+.consultant-action { display: flex; margin-top: 28px; }
+
+/* Consultant profile: a headline stat, then vision and commitment as two quiet cards. */
+.consultant-highlight { display: flex; align-items: center; gap: 18px; padding: 18px 20px; margin-bottom: 22px; border: 1px solid #eadcc3; border-radius: 18px; background: linear-gradient(120deg, #fcf8ef, #f8f1f5); }
+.consultant-highlight .consultant-experience { margin: 0; font-size: 16px; line-height: 1.9; }
+.consultant-stat { display: grid; place-items: center; flex-shrink: 0; width: 92px; height: 92px; border-radius: 22px; color: var(--gold); background: linear-gradient(145deg, #7a2d60, var(--burgundy) 70%); box-shadow: 0 12px 24px rgb(85 28 67 / .2); text-align: center; line-height: 1.1; }
+.consultant-stat strong { display: block; font-size: 32px; font-weight: 700; direction: ltr; }
+.consultant-stat span { display: block; font-size: 11px; color: rgb(255 255 255 / .85); }
+#consultant .consultant-story { display: grid; gap: 14px; padding-top: 0; border-top: 0; }
+.consultant-point { display: flex; align-items: flex-start; gap: 15px; padding: 18px 20px; border: 1px solid #eee4ea; border-radius: 16px; background: #fff; box-shadow: 0 6px 18px rgb(85 28 67 / .04); }
+.consultant-point-icon { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 13px; color: var(--burgundy); background: #f6eef3; }
+.consultant-point h4 { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--burgundy); }
+#consultant .consultant-point p { margin: 0; font-size: 15px; line-height: 1.95; }
+@media (max-width: 700px) {
+  .consultant-highlight { padding: 15px; gap: 14px; }
+  .consultant-stat { width: 78px; height: 78px; border-radius: 19px; }
+  .consultant-stat strong { font-size: 27px; }
+  .consultant-highlight .consultant-experience { font-size: 15px; }
+  .consultant-point { padding: 16px; gap: 12px; }
+  #consultant .consultant-point p { font-size: 14px; }
+  .consultant-action { justify-content: center; }
+}
+
+/* Suitability titles: solid colour bands so the two answers read at a glance. */
+.qualification .fit-card-heading { padding: 26px 30px; border-bottom: 0; background: linear-gradient(130deg, #11603b, #1b8a55); }
+.qualification .not-qualified .fit-card-heading { background: linear-gradient(130deg, #8f2431, #c83a48); }
+.qualification .fit-card-heading h3 { color: #fff; font-size: 24px; font-weight: 600; text-wrap: balance; }
+.qualification .fit-card-icon { width: 52px; height: 52px; border-radius: 16px; color: #16824f; background: #fff; box-shadow: 0 0 0 6px rgb(255 255 255 / .18), 0 8px 18px rgb(0 0 0 / .15); }
+.qualification .not-qualified .fit-card-icon { color: #c83a48; background: #fff; }
+@media (max-width: 700px) {
+  .qualification .fit-card-heading { padding: 22px; }
+  .qualification .fit-card-heading h3 { font-size: 21px; }
+}
+
+/* FAQ: a clear open state with a burgundy accent, numbered badge and rotating toggle. */
+#faq .faq-list details { position: relative; transition: border-color .2s, box-shadow .2s; }
+#faq .faq-list details::before { content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 4px; background: var(--gold); opacity: 0; transition: opacity .2s; }
+#faq .faq-list details:hover { border-color: #d9c6d2; box-shadow: 0 10px 26px rgb(85 28 67 / .07); }
+#faq .faq-list summary { cursor: pointer; font-weight: 500; color: var(--burgundy); }
+#faq .faq-index { width: 40px; height: 40px; border-radius: 12px; font-weight: 600; color: var(--burgundy); background: #f6eef3; transition: background .2s, color .2s; }
+#faq .faq-list summary > svg { width: 32px; height: 32px; padding: 7px; color: var(--burgundy); background: #f6eef3; transition: background .2s, color .2s; }
+#faq .faq-list details[open] { background: #fff; border-color: #cdb5c4; box-shadow: 0 14px 34px rgb(85 28 67 / .09); }
+#faq .faq-list details[open]::before { opacity: 1; }
+#faq .faq-list details[open] .faq-index,
+#faq .faq-list details[open] summary > svg { color: var(--gold); background: var(--burgundy); }
+#faq .faq-answer { margin: 0 25px; padding: 18px 54px 24px 0; border-top: 1px dashed #e7dbe2; }
+@media (max-width: 700px) {
+  #faq .faq-index { width: 34px; height: 34px; }
+  #faq .faq-answer { margin: 0 17px; padding: 16px 0 20px; }
+}
+@media (prefers-reduced-motion: reduce) { #faq .faq-list details, #faq .faq-list details::before, #faq .faq-index, #faq .faq-list summary > svg { transition: none; } }
+
+/* Ebook: a larger cover with a deeper black shadow. */
+#free-guide .ebook-supplied-cover { max-width: 470px; filter: drop-shadow(0 30px 34px rgb(0 0 0 / .55)) drop-shadow(0 10px 12px rgb(0 0 0 / .35)); }
+@media (max-width: 800px) { #free-guide .ebook-supplied-cover { max-width: 340px; } }
+
+/* Testimonial previews sit two per row on phones instead of one tall card each. */
+@media (max-width: 700px) {
+  .testimonials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 420px; gap: 12px; }
+  .testimonial-template { padding: 5px; border-radius: 16px; }
+  .testimonial-template .testimonial-video { border-radius: 12px; }
+  .testimonial-template-badge { top: 8px; right: 8px; padding: 3px 8px; font-size: 9px; }
+  .testimonial-template-caption { gap: 8px; padding: 10px 5px 6px; }
+  .testimonial-template-icon { width: 30px; height: 30px; border-radius: 9px; }
+  .testimonial-template-icon svg { width: 16px; height: 16px; }
+  .testimonial-template-caption strong { font-size: 11px; }
+  .testimonial-template-caption div > span { font-size: 9px; }
+  .testimonial-template-index { display: none; }
+}
+@media (min-width: 801px) { #free-guide .ebook-layout { grid-template-columns: 1fr 1fr; gap: 50px; } }
