@@ -9,7 +9,6 @@ import {
   ChartNoAxesCombined,
   Check,
   ClipboardCheck,
-  Compass,
   GraduationCap,
   HeartHandshake,
   Lightbulb,
@@ -262,19 +261,10 @@ export default function Page() {
                 <blockquote className="consultant-quote">
                   {consultant.quote.split("يعرف الطريق")[0]}<Scribble>يعرف الطريق</Scribble>{consultant.quote.split("يعرف الطريق")[1]}
                 </blockquote>
-                <div className="consultant-highlight">
-                  <span className="consultant-stat" aria-hidden="true"><strong>+10</strong><span>سنوات خبرة</span></span>
-                  <p className="consultant-experience">{consultant.experience}</p>
-                </div>
+                <p className="consultant-experience">{consultant.experience}</p>
                 <div className="consultant-story">
-                  <div className="consultant-point">
-                    <span className="consultant-point-icon"><Compass size={22} strokeWidth={1.6} /></span>
-                    <div><h4>رؤيتنا</h4><p>{consultant.vision}</p></div>
-                  </div>
-                  <div className="consultant-point">
-                    <span className="consultant-point-icon"><ShieldCheck size={22} strokeWidth={1.6} /></span>
-                    <div><h4>التزامنا</h4><p>{consultant.commitment}</p></div>
-                  </div>
+                  <p>{consultant.vision}</p>
+                  <p>{consultant.commitment}</p>
                 </div>
                 <div className="consultant-signoff">
                   <span />

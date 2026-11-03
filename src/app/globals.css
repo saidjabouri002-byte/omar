@@ -6587,27 +6587,7 @@ body { background: #fff; }
 /* Contact button after the transformation story and the consultant profile. */
 .section-contact-action { display: flex; justify-content: center; margin-top: 36px; }
 .consultant-action { display: flex; margin-top: 28px; }
-
-/* Consultant profile: a headline stat, then vision and commitment as two quiet cards. */
-.consultant-highlight { display: flex; align-items: center; gap: 18px; padding: 18px 20px; margin-bottom: 22px; border: 1px solid #eadcc3; border-radius: 18px; background: linear-gradient(120deg, #fcf8ef, #f8f1f5); }
-.consultant-highlight .consultant-experience { margin: 0; font-size: 16px; line-height: 1.9; }
-.consultant-stat { display: grid; place-items: center; flex-shrink: 0; width: 92px; height: 92px; border-radius: 22px; color: var(--gold); background: linear-gradient(145deg, #7a2d60, var(--burgundy) 70%); box-shadow: 0 12px 24px rgb(85 28 67 / .2); text-align: center; line-height: 1.1; }
-.consultant-stat strong { display: block; font-size: 32px; font-weight: 700; direction: ltr; }
-.consultant-stat span { display: block; font-size: 11px; color: rgb(255 255 255 / .85); }
-#consultant .consultant-story { display: grid; gap: 14px; padding-top: 0; border-top: 0; }
-.consultant-point { display: flex; align-items: flex-start; gap: 15px; padding: 18px 20px; border: 1px solid #eee4ea; border-radius: 16px; background: #fff; box-shadow: 0 6px 18px rgb(85 28 67 / .04); }
-.consultant-point-icon { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 13px; color: var(--burgundy); background: #f6eef3; }
-.consultant-point h4 { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--burgundy); }
-#consultant .consultant-point p { margin: 0; font-size: 15px; line-height: 1.95; }
-@media (max-width: 700px) {
-  .consultant-highlight { padding: 15px; gap: 14px; }
-  .consultant-stat { width: 78px; height: 78px; border-radius: 19px; }
-  .consultant-stat strong { font-size: 27px; }
-  .consultant-highlight .consultant-experience { font-size: 15px; }
-  .consultant-point { padding: 16px; gap: 12px; }
-  #consultant .consultant-point p { font-size: 14px; }
-  .consultant-action { justify-content: center; }
-}
+@media (max-width: 700px) { .consultant-action { justify-content: center; } }
 
 /* Suitability titles: solid colour bands so the two answers read at a glance. */
 .qualification .fit-card-heading { padding: 26px 30px; border-bottom: 0; background: linear-gradient(130deg, #11603b, #1b8a55); }
