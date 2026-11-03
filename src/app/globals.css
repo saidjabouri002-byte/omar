@@ -6286,7 +6286,7 @@ body { background: #fff; }
 #transformation .section-intro { text-align: center; margin-inline: auto; }
 #transformation .eyebrow { justify-content: center; }
 #transformation .growth-photo-card { position: relative; box-shadow: none; }
-#transformation .growth-photo-card::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to bottom, transparent 72%, rgb(255 255 255 / .4) 88%, #fff 100%); }
+#transformation .growth-photo-card::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to bottom, transparent 65%, rgb(255 255 255 / .6) 85%, #fff 100%); }
 #transformation .transformation-layout .copy > h3 { text-align: center; }
 #transformation .transformation-layout .copy ul { width: 100%; max-width: 650px; padding-inline: 0; margin-inline: auto; }
 #transformation .transformation-layout .copy li { display: flex; align-items: flex-start; gap: 12px; text-align: right; }
