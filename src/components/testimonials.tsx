@@ -14,7 +14,7 @@ export function Testimonials() {
           {previews.map((number) => (
             <figure className="testimonial-reel testimonial-template" key={number}>
               <div className="testimonial-video">
-                <Image src={`/images/testimonial-previews/preview-${number}.png`} alt={`صورة توضيحية لتصميم الفيديو ${number}، وليست فيديو قابلا للتشغيل`} fill sizes="(max-width:700px) 90vw, (max-width:1100px) 45vw, 25vw" />
+                <Image src={`/images/testimonial-previews/preview-${number}.webp`} alt={`صورة توضيحية لتصميم الفيديو ${number}، وليست فيديو قابلا للتشغيل`} fill sizes="(max-width:700px) 90vw, (max-width:1100px) 45vw, 25vw" />
                 <span className="testimonial-template-badge">نموذج توضيحي</span>
                 <div className="testimonial-template-gradient" aria-hidden="true" />
               </div>

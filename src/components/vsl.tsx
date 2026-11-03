@@ -1,10 +1,12 @@
 import Image from "next/image";
 import media from "@/lib/media.json";
 import { Film, ArrowUpLeft } from "lucide-react";
+import { YouTubeFacade } from "./youtube-facade";
 
 /** A missing video is an honest poster, never a simulated playable control. */
 export function VSL() {
   const source = process.env.NEXT_PUBLIC_VSL_URL?.trim() || media.vsl;
+  let youtubeId: string | null = null;
   let embed: string | null = null;
   let direct: string | null = null;
   if (source) {
@@ -17,8 +19,7 @@ export function VSL() {
             host === "youtu.be"
               ? url.pathname.slice(1)
               : url.searchParams.get("v") || url.pathname.split("/embed/")[1];
-          if (id && /^[\w-]{11}$/.test(id))
-            embed = `https://www.youtube-nocookie.com/embed/${id}?rel=0`;
+          if (id && /^[\w-]{11}$/.test(id)) youtubeId = id;
         } else if (host === "vimeo.com") {
           const id = url.pathname.split("/").filter(Boolean).pop();
           if (id && /^\d+$/.test(id))
@@ -36,7 +37,9 @@ export function VSL() {
       aria-label="الفيديو التعريفي بالبرنامج"
     >
       <div className="vsl-screen">
-        {embed ? (
+        {youtubeId ? (
+          <YouTubeFacade id={youtubeId} title="الفيديو التعريفي بنظام نمو المطاعم والمقاهي" />
+        ) : embed ? (
           <iframe
             src={embed}
             title="الفيديو التعريفي بنظام نمو المطاعم والمقاهي"

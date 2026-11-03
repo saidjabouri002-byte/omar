@@ -1,86 +1,86 @@
 [
   {
     "name": "شعار الطاهي والسنابل",
-    "logo": "/images/partners/partner-1.png",
-    "width": 1200,
-    "height": 1000,
+    "logo": "/images/partners/partner-1.webp",
+    "width": 420,
+    "height": 411,
     "bounds": [
-      380,
-      271,
-      887,
-      767
+      0,
+      0,
+      420,
+      411
     ]
   },
   {
     "name": "Subway",
-    "logo": "/images/partners/partner-2.png",
-    "width": 740,
-    "height": 525,
+    "logo": "/images/partners/partner-2.webp",
+    "width": 420,
+    "height": 125,
     "bounds": [
-      13,
-      156,
-      727,
-      369
+      0,
+      0,
+      420,
+      125
     ]
   },
   {
     "name": "Domino’s",
-    "logo": "/images/partners/partner-3.png",
-    "width": 2000,
-    "height": 1125,
+    "logo": "/images/partners/partner-3.webp",
+    "width": 420,
+    "height": 92,
     "bounds": [
-      7,
-      346,
-      1992,
-      779
+      0,
+      0,
+      420,
+      92
     ]
   },
   {
     "name": "Papa John’s",
-    "logo": "/images/partners/partner-4.png",
-    "width": 1160,
-    "height": 600,
+    "logo": "/images/partners/partner-4.webp",
+    "width": 420,
+    "height": 180,
     "bounds": [
-      107,
-      100,
-      1041,
-      501
+      0,
+      0,
+      420,
+      180
     ]
   },
   {
     "name": "Burger King",
-    "logo": "/images/partners/partner-5.png",
-    "width": 1000,
-    "height": 1000,
+    "logo": "/images/partners/partner-5.webp",
+    "width": 420,
+    "height": 425,
     "bounds": [
-      9,
-      5,
-      987,
-      994
+      0,
+      0,
+      420,
+      425
     ]
   },
   {
     "name": "GO FOOD",
-    "logo": "/images/partners/partner-6.png",
-    "width": 1024,
-    "height": 1024,
+    "logo": "/images/partners/partner-6.webp",
+    "width": 420,
+    "height": 128,
     "bounds": [
-      50,
-      371,
-      973,
-      653
+      0,
+      0,
+      420,
+      128
     ]
   },
   {
     "name": "KFC",
-    "logo": "/images/partners/partner-7.png",
-    "width": 902,
-    "height": 902,
+    "logo": "/images/partners/partner-7.webp",
+    "width": 420,
+    "height": 160,
     "bounds": [
-      46,
-      286,
-      869,
-      599
+      0,
+      0,
+      420,
+      160
     ]
   }
 ]

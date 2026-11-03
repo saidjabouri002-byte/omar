@@ -1,25 +1,25 @@
 @import "tailwindcss";
 @font-face {
   font-family: Plex;
-  src: url("/fonts/arabic-regular.ttf") format("truetype");
+  src: url("/fonts/arabic-regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: Plex;
-  src: url("/fonts/arabic-medium.ttf") format("truetype");
+  src: url("/fonts/arabic-medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: Plex;
-  src: url("/fonts/arabic-semibold.ttf") format("truetype");
+  src: url("/fonts/arabic-semibold.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
 @font-face {
   font-family: Plex;
-  src: url("/fonts/arabic-bold.ttf") format("truetype");
+  src: url("/fonts/arabic-bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
@@ -4351,6 +4351,43 @@ small {
   inset: 0;
   object-fit: contain;
 }
+.vsl-facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: #000;
+  cursor: pointer;
+}
+.vsl-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vsl-facade-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 54px;
+  border-radius: 14px;
+  background: #ff0033;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+}
+.vsl-facade:hover .vsl-facade-play,
+.vsl-facade:focus-visible .vsl-facade-play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.vsl-facade:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
+}
 .vsl-poster {
   object-fit: cover;
   object-position: center 58%;
@@ -4786,7 +4823,8 @@ small {
     border-radius: 8px;
   }
   .vsl-screen:has(video),
-  .vsl-screen:has(iframe) {
+  .vsl-screen:has(iframe),
+  .vsl-screen:has(.vsl-facade) {
     aspect-ratio: 16/9;
   }
   .vsl-poster {
@@ -6317,10 +6355,15 @@ body { background: #fff; }
 #included .focused-deliverables { max-width: 1100px; margin-inline: auto; gap: 24px; }
 #included .focused-deliverable { position: relative; display: flex; flex-direction: column; min-height: 280px; padding: 32px; border-radius: 20px; border: 1px solid #e7e1e5; background: #fff; color: var(--burgundy); box-shadow: 0 8px 28px rgb(85 28 67 / .045); }
 #included .focused-deliverable:nth-child(2), #included .focused-deliverable:nth-child(5) { background: #faf6f8; }
-#included .focused-deliverable::before { content: ""; position: absolute; top: 0; right: 32px; width: 36px; height: 2px; background: var(--gold); }
-#included .focused-deliverable-top { margin-bottom: 28px; }
-#included .focused-deliverable-top > span { color: #8d7a85; font-size: 12px; }
-#included .focused-deliverable-top > svg { width: 52px; height: 52px; padding: 13px; color: var(--burgundy); background: #f3ebf0; border: 1px solid #eadfe6; border-radius: 15px; }
+/* Centered cards: the icon leads, the number sits quietly in the corner. */
+#included .focused-deliverable { align-items: center; text-align: center; }
+#included .focused-deliverable::before { content: ""; position: absolute; top: 0; right: 50%; width: 44px; height: 3px; border-radius: 0 0 3px 3px; background: var(--gold); transform: translateX(50%); }
+#included .focused-deliverable-top { justify-content: center; margin-bottom: 24px; }
+#included .focused-deliverable-top > span:first-child { position: absolute; top: 20px; left: 22px; color: #b3a3ac; font-size: 12px; letter-spacing: .08em; }
+#included .focused-deliverable-icon { position: relative; display: grid; place-items: center; width: 76px; height: 76px; border-radius: 22px; color: var(--gold); background: linear-gradient(145deg, #7a2d60, var(--burgundy) 70%); box-shadow: 0 12px 26px rgb(85 28 67 / .22), inset 0 1px 0 rgb(255 255 255 / .14); transition: transform .25s ease, box-shadow .25s ease; }
+#included .focused-deliverable-icon::after { content: ""; position: absolute; inset: -7px; border: 1px solid rgb(207 167 107 / .45); border-radius: 27px; }
+#included .focused-deliverable:hover .focused-deliverable-icon { transform: translateY(-3px); box-shadow: 0 16px 32px rgb(85 28 67 / .28), inset 0 1px 0 rgb(255 255 255 / .14); }
+@media (prefers-reduced-motion: reduce) { #included .focused-deliverable-icon { transition: none; } #included .focused-deliverable:hover .focused-deliverable-icon { transform: none; } }
 #included .focused-deliverable h3 { font-size: 23px; line-height: 1.6; margin-bottom: 16px; }
 #included .focused-deliverable p { color: var(--muted); font-size: 15px; line-height: 1.95; }
 .refined-bonuses .section-intro { text-align: center; margin-inline: auto; }
@@ -6354,6 +6397,8 @@ body { background: #fff; }
   #transformation + #testimonials { padding-top: 26px; }
   #included .focused-deliverables, .refined-bonuses .bonus-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   #included .focused-deliverable { min-height: 0; padding: 28px; }
+  #included .focused-deliverable-icon { width: 68px; height: 68px; border-radius: 20px; }
+  #included .focused-deliverable-icon::after { border-radius: 25px; }
   .requested-edit-page .refined-bonuses .bonus-card, .requested-edit-page .refined-bonuses .bonus-card:nth-child(4), .requested-edit-page .refined-bonuses .bonus-card:nth-child(5) { grid-column: auto; padding: 28px; }
   .gold-commitment-emblem { max-width: 270px; }
   .gold-emblem-copy strong { font-size: 21px; }

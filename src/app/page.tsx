@@ -4,16 +4,19 @@ import { BrandLogo } from "@/components/brand-logo";
 import {
   ArrowUpLeft,
   BookOpen,
-  BarChart3,
+  ChartNoAxesCombined,
   Check,
+  ClipboardCheck,
   Compass,
+  GraduationCap,
+  HeartHandshake,
+  Megaphone,
   MessageCircle,
-  ReceiptText,
   Repeat2,
   Search,
   ShieldCheck,
+  ShoppingBag,
   Sparkles,
-  Users,
   X,
 } from "lucide-react";
 import Image from "next/image";
@@ -35,12 +38,12 @@ import {
 } from "@/components/interactions";
 import { Assessment } from "@/components/assessment";
 const programItems = [
-  { title: "تشخيص شامل وخطة نمو لمدة 90 يوما", description: "نحلل أداء مشروعك ونحدد فرص التحسين، ثم نبني خطة مخصصة بأولويات واضحة.", icon: Search },
-  { title: "قنوات متنوعة لجذب العملاء", description: "استراتيجية تجمع التسويق المحلي والمحتوى والتوصيات والشراكات والإعلانات المناسبة.", icon: Users },
-  { title: "عروض ترفع قيمة الطلب", description: "تطوير الباقات والبيع الإضافي والبيع المتقاطع، مع مراعاة هامش الربح.", icon: ReceiptText },
-  { title: "نظام ولاء وعودة العملاء", description: "آليات للاحتفاظ بالعملاء وتحسين تجربتهم وتشجيعهم على تكرار الزيارة.", icon: Repeat2 },
-  { title: "تدريب الفريق ومتابعة التنفيذ", description: "جلستان تدريبيتان على البيع والخدمة، و12 اجتماع متابعة لمراجعة التطبيق والنتائج.", icon: MessageCircle },
-  { title: "لوحة لقياس الأداء والربحية", description: "مؤشرات للمبيعات والربحية وتكرار الزيارات وكفاءة الإنفاق التسويقي، حسب البيانات المتاحة.", icon: BarChart3 },
+  { title: "تشخيص شامل وخطة نمو لمدة 90 يوما", description: "نحلل أداء مشروعك ونحدد فرص التحسين، ثم نبني خطة مخصصة بأولويات واضحة.", icon: ClipboardCheck },
+  { title: "قنوات متنوعة لجذب العملاء", description: "استراتيجية تجمع التسويق المحلي والمحتوى والتوصيات والشراكات والإعلانات المناسبة.", icon: Megaphone },
+  { title: "عروض ترفع قيمة الطلب", description: "تطوير الباقات والبيع الإضافي والبيع المتقاطع، مع مراعاة هامش الربح.", icon: ShoppingBag },
+  { title: "نظام ولاء وعودة العملاء", description: "آليات للاحتفاظ بالعملاء وتحسين تجربتهم وتشجيعهم على تكرار الزيارة.", icon: HeartHandshake },
+  { title: "تدريب الفريق ومتابعة التنفيذ", description: "جلستان تدريبيتان على البيع والخدمة، و12 اجتماع متابعة لمراجعة التطبيق والنتائج.", icon: GraduationCap },
+  { title: "لوحة لقياس الأداء والربحية", description: "مؤشرات للمبيعات والربحية وتكرار الزيارات وكفاءة الإنفاق التسويقي، حسب البيانات المتاحة.", icon: ChartNoAxesCombined },
 ];
 const split = (text: string, pattern: RegExp) =>
   text.split(pattern).filter(Boolean);
@@ -187,7 +190,7 @@ export default function Page() {
             <div className="focused-deliverables">
               {programItems.map(({ title, description, icon: Icon }, i) => (
                 <Reveal className="focused-deliverable" key={title}>
-                  <div className="focused-deliverable-top"><span>0{i + 1}</span><Icon size={25} strokeWidth={1.4} /></div>
+                  <div className="focused-deliverable-top"><span>0{i + 1}</span><span className="focused-deliverable-icon"><Icon size={30} strokeWidth={1.6} /></span></div>
                   <h3>{title}</h3><p>{description}</p>
                 </Reveal>
               ))}

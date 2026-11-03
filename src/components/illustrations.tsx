@@ -136,12 +136,12 @@ export function GrowthIllustration() {
 export function PillarVisual({ index }: { index: number }) {
   const illustratedPillars = [
     {
-      src: "/images/acquisition-channels-transparent.png",
+      src: "/images/acquisition-channels-transparent.webp",
       alt: "قنوات جذب العملاء: البحث المحلي، المحتوى، التوصيات، الشراكات والإعلانات تتكامل لجذب العملاء إلى المطعم",
       caption: "مصادر متنوعة. فرص أكثر.",
     },
     {
-      src: "/images/order-value-transparent.png",
+      src: "/images/order-value-transparent.webp",
       alt: "رفع متوسط قيمة الطلب عبر تطوير القائمة، الباقات، البيع الإضافي وتوصيات الفريق مع مراعاة الربحية",
       caption: "كل طلب يحمل فرصة.",
     },
@@ -152,8 +152,8 @@ export function PillarVisual({ index }: { index: number }) {
       <figure className="pillar-image-visual">
         <Image
           src={illustration.src}
-          width={1536}
-          height={1024}
+          width={1400}
+          height={933}
           alt={illustration.alt}
           sizes="(max-width:700px) 100vw, (max-width:1000px) 90vw, 700px"
         />

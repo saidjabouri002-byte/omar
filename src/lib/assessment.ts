@@ -1,15 +1,15 @@
-import { z } from "zod";
+import * as z from "zod/mini";
 export const schema = z.object({
-  type: z.string().min(1, "اختر نوع النشاط"),
-  branches: z.string().min(1, "اختر عدد الفروع"),
-  sales: z.string().min(1, "اختر متوسط المبيعات"),
-  average: z.string().min(1, "اختر متوسط قيمة الفاتورة"),
-  channels: z.array(z.string()).min(1, "اختر قناة واحدة على الأقل"),
-  ads: z.string().min(1, "حدد مستوى الاعتماد على الإعلانات"),
-  adSpend: z.string().optional(),
-  retention: z.string().min(1, "اختر الإجابة الأقرب"),
-  loyalty: z.string().min(1, "حدد وضع برنامج الولاء"),
-  challenges: z.array(z.string()).min(1, "اختر تحديا واحدا على الأقل"),
+  type: z.string().check(z.minLength(1, "اختر نوع النشاط")),
+  branches: z.string().check(z.minLength(1, "اختر عدد الفروع")),
+  sales: z.string().check(z.minLength(1, "اختر متوسط المبيعات")),
+  average: z.string().check(z.minLength(1, "اختر متوسط قيمة الفاتورة")),
+  channels: z.array(z.string()).check(z.minLength(1, "اختر قناة واحدة على الأقل")),
+  ads: z.string().check(z.minLength(1, "حدد مستوى الاعتماد على الإعلانات")),
+  adSpend: z.optional(z.string()),
+  retention: z.string().check(z.minLength(1, "اختر الإجابة الأقرب")),
+  loyalty: z.string().check(z.minLength(1, "حدد وضع برنامج الولاء")),
+  challenges: z.array(z.string()).check(z.minLength(1, "اختر تحديا واحدا على الأقل")),
 });
 export type Answers = z.infer<typeof schema>;
 export const emptyAnswers: Answers = {
