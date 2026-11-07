@@ -11,9 +11,12 @@ import {
   Check,
   ArrowLeft,
   ChevronDown,
+  Menu,
 } from "lucide-react";
 import { Copy } from "./content";
 import { PillarVisual } from "./illustrations";
+import { navLinks } from "@/lib/nav";
+import { ContactButton } from "./contact-button";
 export function Reveal({
   children,
   className = "",
@@ -35,12 +38,31 @@ export function Reveal({
   );
 }
 export function Header() {
+  const [open, setOpen] = useState(false);
   return (
-    <header className="site-header logo-only-header">
-      <div className="container nav centered-logo-header">
-        <a href="#" className="brand" aria-label="نظام النمو — الصفحة الرئيسية">
+    <header className={`site-header grape-header${open ? " is-open" : ""}`}>
+      <div className="container grape-nav">
+        <a href="#" className="brand" aria-label="شركة ملهم — الصفحة الرئيسية" onClick={() => setOpen(false)}>
           <BrandLogo />
         </a>
+        <nav id="site-menu" className="grape-menu" aria-label="القائمة الرئيسية">
+          <ul>
+            {navLinks.map((l) => (
+              <li key={l.href}><a href={l.href} onClick={() => setOpen(false)}>{l.label}</a></li>
+            ))}
+          </ul>
+          <ContactButton variant="book" onOpen={() => setOpen(false)} />
+        </nav>
+        <button
+          type="button"
+          className="grape-menu-toggle"
+          aria-expanded={open}
+          aria-controls="site-menu"
+          aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
     </header>
   );

@@ -1,24 +1,38 @@
 import Image from "next/image";
-import { Film } from "lucide-react";
+import { MessageSquareQuote } from "lucide-react";
 
-const previews = [1, 2, 3, 4];
+const reviews = [
+  { src: "/images/testimonials/review-1.webp", w: 818, h: 384, name: "Dr.Saeed" },
+  { src: "/images/testimonials/review-2.webp", w: 818, h: 566, name: "أبو إبراهيم" },
+  { src: "/images/testimonials/review-3.webp", w: 817, h: 505, name: "Ahmed Abdellahi" },
+  { src: "/images/testimonials/review-4.webp", w: 817, h: 322, name: "Saeedonly" },
+  { src: "/images/testimonials/review-5.webp", w: 815, h: 384, name: "najdan.sa" },
+  { src: "/images/testimonials/review-6.webp", w: 815, h: 393, name: "مراحل الديكور" },
+  { src: "/images/testimonials/review-7.webp", w: 828, h: 452, name: "صالح مستور" },
+  { src: "/images/testimonials/review-8.webp", w: 817, h: 380, name: "Mohammed" },
+  { src: "/images/testimonials/review-9.webp", w: 797, h: 484, name: "zuhairart" },
+];
+
 export function Testimonials() {
   return (
-    <section className="section testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+    <section className="section testimonials-section reviews-section" id="testimonials" aria-labelledby="testimonials-heading">
       <div className="container">
         <div className="section-intro centered">
+          <span className="reviews-kicker"><MessageSquareQuote size={17} />تعليقات حقيقية من أصحاب المشاريع</span>
           <h2 id="testimonials-heading">ماذا يقول عملاؤنا؟</h2>
-          <p>نماذج توضيحية لعرض الفيديوهات — ستضاف شهادات العملاء قريبًا.</p>
+          <p>كلمات نعتز بها من أصحاب مطاعم ومقاهٍ ومشاريع استفادوا من الاستشارة والتوجيه.</p>
         </div>
-        <div className="testimonials-grid">
-          {previews.map((number) => (
-            <figure className="testimonial-reel testimonial-template" key={number}>
-              <div className="testimonial-video">
-                <Image src={`/images/testimonial-previews/preview-${number}.webp`} alt={`صورة توضيحية لتصميم الفيديو ${number}، وليست فيديو قابلا للتشغيل`} fill sizes="(max-width:700px) 90vw, (max-width:1100px) 45vw, 25vw" />
-                <span className="testimonial-template-badge">نموذج توضيحي</span>
-                <div className="testimonial-template-gradient" aria-hidden="true" />
-              </div>
-              <figcaption className="testimonial-template-caption"><span className="testimonial-template-icon"><Film size={20} /></span><div><strong>تجارب تستحق أن تُروى</strong><span>الفيديو سيضاف قريبًا</span></div><span className="testimonial-template-index" aria-hidden="true">0{number}</span></figcaption>
+        <div className="reviews-wall">
+          {reviews.map((r) => (
+            <figure className="review-card" key={r.src}>
+              <Image
+                src={r.src}
+                alt={`تعليق ${r.name} على الأستاذ عمر العسبلي`}
+                width={r.w}
+                height={r.h}
+                sizes="(max-width:700px) 92vw, (max-width:1100px) 45vw, 360px"
+              />
+              <figcaption><span className="review-card-dot" />{r.name}</figcaption>
             </figure>
           ))}
         </div>

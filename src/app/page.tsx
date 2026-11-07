@@ -1,10 +1,8 @@
-import { EbookDownload } from "@/components/ebook-download";
 import { ContactButton } from "@/components/contact-button";
 import { BrandLogo } from "@/components/brand-logo";
 import {
   ArrowUpLeft,
   Binoculars,
-  BookOpen,
   BookOpenCheck,
   ChartNoAxesCombined,
   Check,
@@ -23,17 +21,14 @@ import { ConsultantPortrait } from "@/components/consultant-portrait";
 import consultant from "@/lib/consultant.json";
 import source from "@/lib/content.json";
 import { Copy, CTA, Eyebrow } from "@/components/content";
-import { CommitmentSeal } from "@/components/commitment-seal";
 import { Scribble } from "@/components/scribble";
-import { ProfitGrowth } from "@/components/profit-growth";
-import { SuccessPartners } from "@/components/success-partners";
 import { Testimonials } from "@/components/testimonials";
 import {
   FAQ,
   Header,
-  Legal,
   Reveal,
 } from "@/components/interactions";
+import { SiteFooter } from "@/components/site-footer";
 import { Assessment } from "@/components/assessment";
 const programItems = [
   { title: "تشخيص شامل وخطة نمو لمدة 90 يوما", description: "نحلل أداء مشروعك ونحدد فرص التحسين، ثم نبني خطة مخصصة بأولويات واضحة.", icon: ClipboardCheck },
@@ -53,7 +48,7 @@ export default function Page() {
   const faq = split(source[12], /(?=### )/).slice(1);
   const challengePhotos = [
     { src: "/images/challenges/challenge-1.webp", position: "50% 50%" },
-    { src: "/images/challenges/challenge-2.webp", position: "50% 50%" },
+    { src: "/images/challenges/challenge-2-empty-tables.webp", position: "50% 70%" },
     { src: "/images/challenges/challenge-3.webp", position: "50% 50%" },
     { src: "/images/challenges/challenge-4.webp", position: "50% 50%" },
     { src: "/images/challenges/challenge-5.webp", position: "50% 50%" },
@@ -76,7 +71,6 @@ export default function Page() {
     "أشهر تالية",
   ];
   const bonusIcons = [Binoculars, Lightbulb, BookOpenCheck];
-  const transformation = source[2].split("\n\n");
   return (
     <>
       <Header />
@@ -116,7 +110,6 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <SuccessPartners />
         <section className="section problems" id="challenges">
           <div className="container">
             <Reveal>
@@ -155,25 +148,6 @@ export default function Page() {
                 );
               })}
             </div>
-          </div>
-        </section>
-        <section className="section transformation" id="transformation">
-          <div className="container">
-            <div className="section-intro centered">
-              <Eyebrow number="02">التحول الذي نعمل عليه</Eyebrow>
-              <h2>
-                من إدارة عشوائية…
-                <br />
-                <span className="gold-text">إلى بناء غد مشرق لمشروعك.</span>
-              </h2>
-            </div>
-            <div className="transformation-layout">
-              <ProfitGrowth />
-              <div>
-                <Copy text={transformation.slice(0, 2).join("\n\n")} />
-              </div>
-            </div>
-            <div className="section-contact-action"><ContactButton /></div>
           </div>
         </section>
         <Testimonials />
@@ -270,7 +244,7 @@ export default function Page() {
                   <span />
                   <span>رؤية واضحة. وعمل يستحق الأثر.</span>
                 </div>
-                <div className="consultant-action"><ContactButton /></div>
+                <div className="consultant-action"><ContactButton variant="book" /><ContactButton /></div>
               </div>
             </div>
           </div>
@@ -289,20 +263,6 @@ export default function Page() {
               <p>احصل على تقرير تشخيص أولي مجاني لمشروعك</p>
             </div>
             <Assessment />
-          </div>
-        </section>
-        <section className="section commitment">
-          <div className="container commitment-layout">
-            <CommitmentSeal />
-            <div>
-              <Eyebrow number="07">التزام واضح من البداية</Eyebrow>
-              <h2>
-                نريد أن تكون رحلتك
-                <br />
-                <span className="commitment-gold-title">واضحة من البداية.</span>
-              </h2>
-              <Copy text={source[10]} omitTitle />
-            </div>
           </div>
         </section>
         <section className="section qualification">
@@ -347,39 +307,8 @@ export default function Page() {
             <FAQ items={[faq[0], faq[1], faq[7], faq[10], faq[11]]} />
           </div>
         </section>
-        <section className="section ebook-section" id="free-guide" aria-labelledby="ebook-heading">
-          <div className="container ebook-layout">
-            <div className="ebook-image-scene">
-              <Image className="ebook-supplied-cover" src="/images/restaurant-growth-ebook.webp" alt="غلاف دليل نمو المطاعم من إعداد عمر العسبلي" width={800} height={875} sizes="(max-width:800px) 85vw, 420px" />
-            </div>
-            <div className="ebook-copy">
-              <span className="ebook-kicker"><BookOpen size={18} />دليل مجاني لأصحاب المطاعم والمقاهي</span>
-              <h2 id="ebook-heading">امنح عملاءك سبباً للزيارة…<br /><span className="muted">وسبباً أقوى للعودة.</span></h2>
-              <p>ابدأ من فرصة واحدة تستحق التجربة. اكتشف في هذا الدليل 7 خطوات تساعدك على الوصول إلى عملاء جدد، وتحسين تجربتهم، وتشجيعهم على تكرار الزيارة.</p>
-              <ul className="ebook-benefits"><li><Check size={18} />اجعل العثور على مشروعك واختيارك أسهل.</li><li><Check size={18} />طوّر عروضك وشجّع العودة والتوصيات.</li><li><Check size={18} />حوّل الأفكار إلى تجربة أسبوعية تقيس نتائجها.</li></ul>
-              <p className="ebook-invitation">اقرأه اليوم، واختر أول خطوة تطبّقها غداً.</p>
-              <EbookDownload />
-            </div>
-          </div>
-        </section>
       </main>
-      <footer className="site-footer">
-        <div className="container">
-          <div className="footer-top">
-            <a className="brand" href="#">
-              <BrandLogo />
-            </a>
-            <p>برنامج استشاري وتطبيقي مخصص لأصحاب المطاعم والمقاهي في الرياض</p>
-          </div>
-          <div className="footer-bottom">
-            <span>© [اسم الشركة] — جميع الحقوق محفوظة.</span>
-            <Legal />
-            <span className="footer-location">
-              الرياض، المملكة العربية السعودية
-            </span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
