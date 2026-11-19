@@ -26,7 +26,7 @@ export function CTA({
 }) {
   return (
     <a
-      className={`button ${light ? "button-light" : ""} ${children === "اكتشف فرص نمو مشروعك مجانا" ? "button-whatsapp-green" : ""}`}
+      className={`button ${light ? "button-light" : ""} ${children === "اكتشف فرص نمو مشروعك مجانا" ? "button-brand-primary" : ""}`}
       href="#audit"
     >
       <span>{children}</span>

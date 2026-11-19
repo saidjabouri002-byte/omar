@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export function Scribble({ children, color = "green" }: { children: ReactNode; color?: "red" | "green" }) {
+export function Scribble({ children, color = "purple" }: { children: ReactNode; color?: "purple" | "gold" }) {
   return <span className={`scribble scribble-${color}`}>
     <span>{children}</span>
     <svg viewBox="0 0 300 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
